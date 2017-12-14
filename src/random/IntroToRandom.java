@@ -11,11 +11,13 @@ import java.util.Random;
 
 public class IntroToRandom {
 	public static void main(String[] args) {
-		int r = 0;
+		int random = 0;
 		
 		//2. Now make r random. 
 		//   Create an object of the Random class
 		//   Hint: new Random().nextInt()
+Random sam = new Random();
+random =sam .nextInt(311)-222;
 
 		//3. Limit the random number between 0 and 100
 
@@ -25,6 +27,6 @@ public class IntroToRandom {
 
 
 		
-		System.out.println(r); 
+		System.out.println(random); 
 	}
 }
