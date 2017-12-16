@@ -6,6 +6,7 @@ package random;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -17,7 +18,7 @@ import javax.swing.JPanel;
 
 public class RockPaperScissors extends JPanel implements ActionListener{
   
-	private JFrame window = new JFrame("Rock Paper Scissors");
+	private JFrame window = new JFrame("Rock Paper Scissors ");
 	private JButton rockButton = new JButton();
 	private JButton paperButton = new JButton();
 	private JButton scissorsButton = new JButton();
@@ -38,7 +39,7 @@ public class RockPaperScissors extends JPanel implements ActionListener{
 			// Drop the pictures into this package
 			// Replace the names below with your images
 		
-			rockImage = new ImageIcon(getClass().getResource("rock.jpg"));
+			rockImage = new ImageIcon(getClass().getResource("rock4.jpeg"));
 			paperImage = new ImageIcon(getClass().getResource("paper.jpeg"));
 			scissorsImage = new ImageIcon(getClass().getResource("scissors.jpeg"));
 
@@ -58,7 +59,7 @@ public class RockPaperScissors extends JPanel implements ActionListener{
         paperButton.setPreferredSize(buttonDim);
         scissorsButton.setPreferredSize(buttonDim);
         
-        instructionLabel.setText("Choose Your Weapon!");
+        instructionLabel.setText("Choose One!");
         
         add(instructionLabel);
         add(rockButton);
@@ -81,7 +82,8 @@ public class RockPaperScissors extends JPanel implements ActionListener{
         //2. Run the program 4 times. Does the computer always choose the same thing?
 
         //3. Change oppenentSelection to be a random number between 0 and 2;
-        int opponentSelection = 0;
+    	Random gen =new Random();
+        int opponentSelection=gen.nextInt(3) ;
         
         //4. Run the program again. Is the result different?
  
@@ -109,11 +111,11 @@ public class RockPaperScissors extends JPanel implements ActionListener{
     
     private String convertSelection(int s){
        if (s==0)
-            return "ROCK";
+            return "Rock";
        else if (s==1)
-            return "PAPER";
+            return "Paper";
        else if (s==2)
-            return "SCISSORS";
+            return "Scissors";
        else
             return "";
         }
